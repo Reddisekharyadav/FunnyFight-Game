@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <style>
+       body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    background-image: url('images/kitcen.png'); /* Add your image path here */
+    background-size: cover; /* This will ensure that your background covers the whole page */
+    background-position: center; /* This will center your background image */
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.buy-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #45a049;
+}
+
+.buy-button:active {
+    background-color: #3e8e41;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    padding: 0 20px;
+}
+
+header nav .logo span {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover, header nav ul li a:focus {
+    background-color: #003875;
+    border-radius: 5px;
+}
+#items-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns */
+    grid-auto-rows: calc((1200px - (3 * 20px)) / 4); /* Attempts to make items square based on container width */
+    gap: 20px; /* Space between items */
+    margin: 0 auto; /* Center the grid horizontally */
+    padding: 20px; /* Padding inside the container */
+    max-width: 1200px; /* Maximum width of the container */
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.item-image {
+    width: 100%; /* Make image fill the column width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area without losing aspect ratio */
+}
+
+.item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 100px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><span>GameZone</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript:history.back()">Back</a></li>
+                <li><a href="gameplay.html">New Game</a></li>
+            </ul>
+            <div id="player-profile">
+                <h2>Player Name: <span id="player-name">John Doe</span></h2>
+                <h3>Points: <span id="player-points">100</span></h3>
+                <h3>Money: $<span id="player-money">0</span></h3>
+            </div>
+        </nav>
+    </header>
+    <h1>Marketplace</h1>
+    <p>Welcome to the marketplace! Buy and sell items here.</p>
+    <div id="items-container">
+        <div class="item" data-item-id="1">
+            <img src="images/apple.png" alt="Item 1 Image" class="item-image">
+            <h3>APPLE</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/cups.png" alt="Item 1 Image" class="item-image">
+            <h3>CUPS</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/fork.png" alt="Item 1 Image" class="item-image">
+            <h3>FORK</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/glasses.png" alt="Item 1 Image" class="item-image">
+            <h3>GLASSES</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/jug.png" alt="Item 1 Image" class="item-image">
+            <h3>JUG</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/knife.png" alt="Item 1 Image" class="item-image">
+            <h3>KNIFE</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/lids.png" alt="Item 1 Image" class="item-image">
+            <h3>LIDS</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/plates.png" alt="Item 1 Image" class="item-image">
+            <h3>PLATES</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/slippers.png" alt="Item 1 Image" class="item-image">
+            <h3>SLIPPERS</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/waterbottle.png" alt="Item 1 Image" class="item-image">
+            <h3>WATER BOTTLE</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="item" data-item-id="1">
+            <img src="images/spoons.png" alt="Item 1 Image" class="item-image">
+            <h3>SPOONS</h3>
+            <p>$10.00</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+
+        
+
+         
+
+        <!-- More items can be added here -->
+    </div>
+    <div id="notification-area" style="display: none; color: white; background-color: black; padding: 10px; margin-bottom: 20px; text-align: center;"></div>
+    <script>
+       
+document.addEventListener('DOMContentLoaded', function() {
+    const itemsContainer = document.getElementById('items-container');
+    const playerPointsElement = document.getElementById('player-points');
+    const playerMoneyElement = document.getElementById('player-money');
+
+    // Simulate updating points - replace this with actual gameplay logic
+    function updatePlayerPoints(newPoints) {
+        playerPointsElement.textContent = newPoints;
+        updatePlayerMoney(newPoints); // Convert points to money
+    }
+
+    function updatePlayerMoney(points) {
+        const money = points; // Assuming 1 point = $1
+        playerMoneyElement.textContent = money.toFixed(2);
+    }
+
+    itemsContainer.addEventListener('click', function(e) {
+        if (e.target && e.target.matches('.buy-button')) {
+            const itemId = e.target.closest('.item').getAttribute('data-item-id');
+            purchaseItem(itemId);
+        }
+    });
+
+    // Example of updating points and money
+    // This should be triggered by actual gameplay logic
+    updatePlayerPoints(100); // Initial points, replace with dynamic value
+});
+
+function showNotification(message, isSuccess = true) {
+    const notificationArea = document.getElementById('notification-area');
+    notificationArea.style.display = 'block';
+    notificationArea.textContent = message;
+    notificationArea.style.backgroundColor = isSuccess ? 'green' : 'red';
+    setTimeout(() => { notificationArea.style.display = 'none'; }, 5000);
+}
+function purchaseItem(itemId) {
+    const itemCost = 10; // Cost per item, adjust as needed
+    let currentPoints = parseInt(playerPointsElement.textContent);
+    let currentMoney = parseInt(playerMoneyElement.textContent);
+    const notificationArea = document.getElementById('notification-area');
+
+    if (currentMoney >= itemCost) {
+        // Deduct the cost of the item from the player's money
+        currentMoney -= itemCost;
+        // Optionally, update points as well if they directly correlate to money
+        currentPoints -= itemCost;
+
+        playerMoneyElement.textContent = currentMoney.toFixed(2);
+        playerPointsElement.textContent = currentPoints.toString();
+
+        // Display notification on webpage
+        showNotification(`Item with ID: ${itemId} purchased successfully!`);
+        // Optionally, update the UI or backend to reflect the purchased item status
+    } else {
+        showNotification("Not enough money to purchase this item.", false);
+    }
+}
+    </script>
+</body>
+</html>

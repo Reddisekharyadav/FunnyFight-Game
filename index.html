@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="user-info">
+            <img src="images/downloadedImage (1).png" alt="User Avatar">
+            <span>Username: <strong>Rijul</strong></span>
+            <span>Rank: <strong>10</strong></span>
+            <span>Gold: <strong>1000</strong></span>
+        </div>
+    </header>
+
+    <!-- Home Screen -->
+    <section class="home-screen">
+        <div class="sales-banner">
+            <h2> Limited Time Offer! </h2>
+            <p>Get 20% off on all in-game purchases!</p>
+            <button  onclick="window.location.href='marketplace.html'">Shop Now</button>
+        </div>
+        <div class="main-menu">
+            <button class="play-button">Play</button>
+            <button class="leaderboard-button">Leaderboard</button>
+            <button class="rules-button">Rules</button>
+            <button class="marketplace-button">Marketplace</button>
+            <button class="profile-button">Profile</button>
+        </div>
+    </section>
+
+    <!-- Play Options -->
+    <section class="play-options">
+        <h2>Play Options</h2>
+        <button class="play-button" onclick="window.location.href='gameplay.html'">New Game</button>
+        <div class="game-modes">
+            <button>Ranked</button>
+            <button>Unranked</button>
+            <button>Casual</button>
+        </div>
+    </section>
+
+    <!-- Leaderboard -->
+    <section class="leaderboard">
+        <h2>Leaderboard</h2>
+        <table>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Rijul</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>User2</td>
+                <td>900</td>
+            </tr>
+            <!-- Add more leaderboard entries here -->
+        </table>
+    </section>
+
+    <!-- Rules -->
+    <section class="rules">
+        <h2>Rules</h2>
+        <button class="tutorial-button" onclick="window.location.href='rules.html'">Interactive Tutorial</button>
+        <button class="rules-text-button" onclick="window.location.href='rules.html'">Game Rules</button>
+    </section>
+
+    <!-- Marketplace -->
+    <section class="marketplace">
+        <h2>Marketplace</h2>
+        <div class="collection-grid">
+            <div class="collection">
+                <img src="images/apple.png" alt="Collection Image">
+                <h2>apple</h2>
+                <p>10 items | $100 - $500</p>
+                <button onclick="window.location.href='marketplace.html'">View Collection</button>
+            </div>
+            <div class="collection">
+                <img src="images/fork.png" alt="Collection Image">
+                <h2>fork</h2>
+                <p>20 items | $50 - $200</p>
+                <button onclick="window.location.href='marketplace.html'">View Collection</button>
+            </div>
+            <!-- Add more collection items here -->
+        </div>
+    </section>
+
+    <!-- User Profile -->
+    <section class="user-profile">
+        <h2>User Profile</h2>
+        <div class="user-info">
+            <img src="images/downloadedImage (1).png" alt="User Avatar">
+            <span>Username: <strong>Rijul</strong></span>
+            <span>Rank: <strong>10</strong></span>
+            <span>Points: <strong>1000</strong></span>
+            <span>Level: <strong>5</strong></span>
+            <span>Gold: <strong>1000</strong></span>
+            <span>Friends: <strong>10</strong></span>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

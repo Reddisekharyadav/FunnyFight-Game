@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e4eda6;
+}
+
+header {
+    background-color: #3bea14;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+.user-info {
+   display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info span {
+    margin-right: 20px;
+}
+
+.home-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.sales-banner {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(224, 17, 17, 0.1);
+}
+
+.sales-banner h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sales-banner p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.sales-banner button {
+    background-color: #eb0808;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.main-menu button {
+    background-color: #f00c0c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.play-options {
+    padding: 20px;
+}
+
+.play-options h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.play-options button {
+    background-color: #ef1919;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.game-modes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.game-modes button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.leaderboard {
+    padding: 20px;
+}
+
+.leaderboard h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard th,.leaderboard td {
+    border: 1px solid #e30c0c;
+    padding: 10px;
+    text-align: left;
+}
+
+.rules {
+    padding: 20px;
+}
+
+.rules h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.rules button {
+    background-color: #e41414;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.marketplace {
+    padding: 20px;
+}
+
+.marketplace h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.collection {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(209, 11, 11, 0.1);
+}
+
+.collection img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.collection h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.collection p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.collection button {
+    background-color: #cd1919;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.user-profile {
+    padding: 20px;
+}
+
+.user-profile h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.user-profile.user-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.user-profile.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-profile.user-info span {
+    margin-right: 20px;
+}

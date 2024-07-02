@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Kitchen Fight</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/downloadedImage\ \(2\).png'); /* Update this path */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .text-box {
+    position: absolute;
+    margin-bottom: 60vh; /* Adjust based on image height and desired position */
+    width: 200px; /* Adjust as needed */
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    transform: translateX(-200%); /* Move slightly to the left */
+}
+
+        .characters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: relative; /* Needed for absolute positioning of text boxes */
+    
+
+        }
+        .character img {
+            width: 30vw; /* Increased size */
+            height: 60vh; /* Increased size */
+            margin: 0 2vw; /* Adjust spacing between images */
+        }
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            width: 100%; /* Adjust to spread out below images */
+            margin-top: 20px; /* Space from images */
+        }
+        .boy-controls, .girl-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center buttons below images */
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .game-controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .control-button {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        /* Initial sidebar style */
+#sidebar {
+    position: fixed; /* Fixed position to stay in place during scroll */
+    top: 0; /* Align to the top */
+    right: -250px; /* Start off-screen to the right */
+    width: 250px; /* Set a fixed width */
+    height: 100%; /* Full height */
+    background-color: #f4f4f4; /* Light grey background, adjust as needed */
+    transition: right 0.3s ease; /* Smooth transition for the sidebar movement */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Style when sidebar is active */
+#sidebar.active {
+    right: 0; /* Move into view */
+}
+     
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        #profileSettings {
+        width: 70px; /* Adjust width as needed */
+        height: 70px; /* Adjust height as needed */
+        object-fit: cover; /* This ensures the image keeps its aspect ratio */
+    }
+    .kitchen-items .item {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes the div circular */
+    background-color: #f0f0f0; /* Light grey background, adjust as needed */
+    text-align: center;
+    line-height: 50px; /* Vertically center the text */
+    cursor: pointer;
+    margin: 10px;
+    display: inline-block;
+}
+.kitchen-items .item img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    padding: 0 20px;
+}
+
+header nav .logo span {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover, header nav ul li a:focus {
+    background-color: #e8591b;
+    border-radius: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><span>GameZone</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript:history.back()">Back</a></li>
+                <li><a href="gameplay.html">New Game</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="characters">
+        <div class="character"><img id="boyImage" src="images/boy-normal.png" alt="Boy">
+            <input type="text" id="boyText" placeholder="Boy says..." class="text-box">
+        </div>
+        <div class="character"><img id="girlImage" src="images/girl-normal.png" alt="Girl">
+            <input type="text" id="girlText" placeholder="Girl says..." class="text-box">
+        </div>
+        <div class="kitchen-items">
+            <!-- Example kitchen items with images -->
+            <div class="item" onclick="changeImage('boy', 'beating')">
+                <img src="images/apple.png" alt="Apple">
+            </div>
+            <div class="item" onclick="changeImage('girl', 'beating')">
+                <img src="images/knife.png" alt="knife">
+            </div>
+            <div class="item" onclick="changeImage('boy', 'beating')">
+                <img src="images/fork.png" alt="Fork">
+            </div>
+            <div class="item" onclick="changeImage('girl', 'beating')">
+                <img src="images/lids.png" alt="lids">
+            </div>
+            <div class="item" onclick="changeImage('boy', 'beating')">
+                <img src="images/plates.png" alt="plates">
+            </div>
+            <div class="item" onclick="changeImage('girl', 'beating')">
+                <img src="images/cups.png" alt="cups">
+            </div>
+            <div class="item" onclick="changeImage('girl', 'beating')">
+                <img src="images/jug.png" alt="jug">
+            </div>
+            <div class="item" onclick="changeImage('girl', 'beating')">
+                <img src="images/spoons.png" alt="sppons">
+            </div>
+            <div class="item" onclick="changeImage('girl', 'beating')">
+                <img src="images/waterbottle.png" alt="water">
+            </div>
+            <div class="item" onclick="changeImage('girl', 'beating')">
+                <img src="images/slippers.png" alt="slipper">
+            </div>
+
+        </div>
+  
+    </div>
+    <div class="controls">
+        <div class="boy-controls">
+            <button onclick="changeImage('boy', 'shouting')">Boy Shouting</button>
+            <button onclick="changeImage('boy', 'beating')">Boy Beating</button>
+            <button onclick="changeImage('boy', 'normal')">Boy Normal</button> <!-- New button -->
+        </div>
+        <div class="girl-controls">
+            <button onclick="changeImage('girl', 'shouting')">Girl Shouting</button>
+            <button onclick="changeImage('girl', 'beating')">Girl Beating</button>
+            <button onclick="changeImage('girl', 'normal')">Girl Normal</button> <!-- New button -->
+        </div>
+    </div>
+    <div class="game-controls">
+        <button id="pauseButton" class="control-button">Pause</button>
+        <img id="profileSettings" src="images/downloadedImage (1).png" class="control-button" alt="Settings">
+    </div>
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+            <li><a href="#" onclick="startNewGame()">New Game</a></li>
+        </ul>
+    </div>
+
+
+
+    <script>
+        // Example function to call when a game ends
+function saveGameResult(name, playTime) {
+    const gameResults = JSON.parse(localStorage.getItem('gameResults')) || [];
+    gameResults.push({ name, playTime });
+    localStorage.setItem('gameResults', JSON.stringify(gameResults));
+}
+
+// Example usage
+// saveGameResult('Player1', 120); // Call this with actual values when a game ends
+        function changeImage(character, action) {
+            const basePath = 'images/'; // Base path to your images
+            let imageName = '';
+
+            if (character === 'boy') {
+                imageName = `boy-${action}.png`;
+            } else if (character === 'girl') {
+                imageName = `girl-${action}.png`;
+            }
+
+            document.getElementById(`${character}Image`).src = basePath + imageName;
+            // Play the video
+            const container = document.querySelector('.character-container');
+        if (action === 'beating') {
+            // Corrected to use a relative path
+            container.style.backgroundImage = "url('images/kitchen.png')"; // Ensure 'kitchen.png' is the correct file name
+        } else {
+            container.style.backgroundImage = ""; // Reset to default or remove background image
+        }
+    
+}
+
+document.getElementById("girlText").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        speakText(this.value, 'female');
+        changeImage('girl', 'shouting');
+    }
+});
+document.getElementById("boyText").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        speakText(this.value, 'male');
+        changeImage('boy', 'shouting');
+    }
+});
+
+
+
+// Function to speak text with a specific voice gender
+// Ensure the speech synthesis voices are loaded
+// Ensure voices are loaded
+function getVoices() {
+    return new Promise(resolve => {
+        let voices = window.speechSynthesis.getVoices();
+        if (voices.length) {
+            resolve(voices);
+        } else {
+            window.speechSynthesis.onvoiceschanged = () => {
+                voices = window.speechSynthesis.getVoices();
+                resolve(voices);
+            };
+        }
+    });
+}
+
+// Function to speak text with a specific voice gender
+async function speakText(text, gender) {
+    const voices = await getVoices();
+    const msg = new SpeechSynthesisUtterance(text);
+    if (gender === 'male') {
+        msg.voice = voices.find(voice => voice.lang === 'en-US' && voice.name.includes('Male'));
+    } else if (gender === 'female') { // Corrected from 'gener' to 'gender'
+        msg.voice = voices.find(voice => voice.lang === 'en-US' && voice.name.includes('Female'));
+    }
+    window.speechSynthesis.speak(msg);
+}
+
+// Debounce function
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(...args), wait);
+    };
+}
+
+// Apply debounced event handler for speaking text
+document.getElementById('girlText').addEventListener('input', debounce(function() {
+    speakText(this.value, 'female');
+}, 500)); // Adjust the delay as needed
+
+document.getElementById('boyTextBox').addEventListener('input', debounce(function() {
+    speakText(this.value, 'male');
+}, 500)); // Adjust the delay as needed
+function changeImage(character, action) {
+    const basePath = 'images/';
+    let imageName = `${character}-${action}.png`;
+    document.getElementById(`${character}Image`).src = basePath + imageName;
+}
+ // Pause Button Functionality
+ document.getElementById('pauseButton').addEventListener('click', function() {
+            // Implement pause functionality here
+            alert('Game Paused! Implement pause functionality.');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+    // Toggle Sidebar Visibility
+    document.getElementById('profileSettings').addEventListener('click', function() {
+        console.log('Profile settings clicked');
+        document.getElementById('sidebar').classList.toggle('active');
+    });
+});
+    // Placeholder for New Game functionality
+    function startNewGame() {
+        alert('Starting New Game! Implement this functionality based on your game logic.');
+    }
+    // At the end of a game, call saveGameResult with actual values
+saveGameResult('PlayerName', playTimeInMinutes); // Ensure this is executed
+function saveGameResult(name, playTime) {
+    console.log(`Saving result for ${name} with play time: ${playTime}`); // Debugging line
+    const gameResults = JSON.parse(localStorage.getItem('gameResults')) || [];
+    gameResults.push({ name, playTime });
+    localStorage.setItem('gameResults', JSON.stringify(gameResults));
+}
+   </script> 
+</body>
+</html>

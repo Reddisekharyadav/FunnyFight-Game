@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+
+/* Reset some basic elements */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    background: #007bff;
+    color: #ffffff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header nav .logo span {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.profile-details, .items-for-sale {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-info p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.items-for-sale {
+    /* Additional styling for items for sale can go here */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><span>GameZone</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript:history.back()">Back</a></li>
+                <li><a href="gameplay.html">New Game</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Profile</h1>
+    <p>Welcome to your profile page. Here, you can view and edit your profile information.</p>
+    <!-- Add profile information and edit functionality here -->
+    <main>
+        <section class="profile-details">
+            <h2>Profile Details</h2>
+            <div class="profile-info">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> john.doe@example.com</p>
+                <p><strong>Location:</strong> New York, USA</p>
+                <p><strong>Member Since:</strong> January 2020</p>
+            </div>
+        </section>
+        <section class="items-for-sale">
+            <!-- Existing items for sale will go here -->
+        </section>
+    </main>
+    <script>
+            profileButton.addEventListener("click", function () {
+        // Redirect to profile page
+        window.location.href = "profile.html";
+    });</script>
+</body>
+</html>
